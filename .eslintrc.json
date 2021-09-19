@@ -1,0 +1,54 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "globals": {
+    "localStorage": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:jest/recommended",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react",
+    "plugin:cypress/recommended",
+    "plugin:jest-extended/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "allowImpotExportEverywhere": true
+  },
+  "plugins": ["react", "prettier", "jest", "testing-library", "jest-dom", "cypress", "jest-extended"],
+  "rules": {
+    "no-use-before-define": ["error", { "functions": false }],
+    "no-unused-vars": ["error", { "varsIgnorePattern": "[iI]gnored", "args": "none" }],
+
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "react/no-array-index-key": "off",
+    "react/display-name": "off",
+
+    "prettier/prettier": ["error"],
+
+    "jest/no-focused-tests": "off",
+    "jest/expect-expect": "off",
+
+    "testing-library/no-debug": [
+      "error",
+      {
+        "utilsToCheckFor": {
+          "debug": false
+        }
+      }
+    ],
+    "testing-library/no-node-access": "off"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "jest/valid-expect": "off",
+    "jest/valid-expect-in-promise": "off",
+    "jest/no-identical-title": "off",
+
+    "testing-library/await-async-query": "off",
+    "testing-library/prefer-screen-queries": "off",
+    "testing-library/await-async-utils": "off"
+  }
+}

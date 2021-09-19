@@ -1,0 +1,3 @@
+{
+  "include": ["./node_modules/cypress", "cypress/**/*.js", "src/**/*", "./node_modules/@testing-library/cypress", "./node_modules/cypress-file-upload"]
+}
