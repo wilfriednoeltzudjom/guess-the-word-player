@@ -76,7 +76,7 @@ export default styled.div`
         height: 5px;
         border-radius: ${dimensions.defaults.radius};
         background: ${colors.white};
-        animation: ${progressBar} 5s forwards;
+        animation: ${progressBar} ${getShowDuration} forwards;
         animation-delay: 1s;
       }
     }
@@ -91,3 +91,7 @@ export default styled.div`
     }
   }
 `;
+
+function getShowDuration({ showDuration }) {
+  return `${showDuration}s`;
+}
