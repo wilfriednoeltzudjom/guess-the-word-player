@@ -8,11 +8,15 @@ import AppStyled from './App.styled';
 import PublicRoute from './helpers/PublicRoute';
 import PrivateRoute from './helpers/PrivateRoute';
 import { Loading } from './library';
+import AppUnsupported from './AppUnsupported';
+import useWindowDimensions from './hooks/useWindowDimensions';
 
 function App() {
+  const { width } = useWindowDimensions();
+
   const loadingState = useSelector((state) => state.loadingState);
 
-  return (
+  return canShowAppContent(width) ? (
     <>
       <AppStyled>
         <Router>
@@ -25,6 +29,8 @@ function App() {
 
       <Loading shown={loadingState.shown} />
     </>
+  ) : (
+    <AppUnsupported />
   );
 }
 
@@ -33,6 +39,10 @@ function renderPublicRoutes() {
 }
 function renderPrivateRoutes() {
   return privateRoutes.map(({ key, ...restProps }) => <PrivateRoute key={key} {...restProps} />);
+}
+
+function canShowAppContent(width) {
+  return width > 1200;
 }
 
 export default App;
